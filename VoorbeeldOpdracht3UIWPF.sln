@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoorbeeldOpdracht3UIWPF", "VoorbeeldOpdracht3UIWPF\VoorbeeldOpdracht3UIWPF.csproj", "{5A8DC15A-8A74-44CD-851D-0FD223B7D215}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppBierenDbEFCore", "ConsoleAppBierenDbEFCore\ConsoleAppBierenDbEFCore.csproj", "{F71DA723-3AA0-49B6-86A4-CC290F3E494A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BierenWebAPI", "BierenWebAPI\BierenWebAPI.csproj", "{86CA073B-FF88-4EF9-B988-2A3F84297BF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5A8DC15A-8A74-44CD-851D-0FD223B7D215}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A8DC15A-8A74-44CD-851D-0FD223B7D215}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A8DC15A-8A74-44CD-851D-0FD223B7D215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F71DA723-3AA0-49B6-86A4-CC290F3E494A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F71DA723-3AA0-49B6-86A4-CC290F3E494A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F71DA723-3AA0-49B6-86A4-CC290F3E494A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F71DA723-3AA0-49B6-86A4-CC290F3E494A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CA073B-FF88-4EF9-B988-2A3F84297BF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CA073B-FF88-4EF9-B988-2A3F84297BF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CA073B-FF88-4EF9-B988-2A3F84297BF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CA073B-FF88-4EF9-B988-2A3F84297BF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

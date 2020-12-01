@@ -10,8 +10,8 @@
         <viewmodels:MijnViewModel x:Key="MijnViewModel"/>
     </UserControl.Resources>  
     <StackPanel DataContext="{StaticResource MijnViewModel}">
-                <DataGrid Grid.Row="0" ItemsSource="{Binding PersoonCollectie}" 
+                <DataGrid ItemsSource="{Binding PersoonCollectie}" 
                   SelectedItem="{Binding HuidigePersoon,Mode=TwoWay}"></DataGrid>
 
-            </StackPanel>
+    </StackPanel>
 </UserControl>

@@ -7,8 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <TabControl>
-        <TabItem Header="Vraag 3" >
-            <local1:MijnUserControl/>
+        <TabItem Header="Demo Bieren">
+            <local1:BierenUserControl/>
         </TabItem>
+        <!--<TabItem Header="Vraag 3" >
+            <local1:MijnUserControl/>
+        </TabItem>-->
+
     </TabControl>
 </Window>

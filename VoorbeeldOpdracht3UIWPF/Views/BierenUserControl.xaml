@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="VoorbeeldOpdracht3UIWPF.Views.BierenUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VoorbeeldOpdracht3UIWPF.Views" xmlns:viewmodels="clr-namespace:VoorbeeldOpdracht3UIWPF.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <viewmodels:BierenViewModel x:Key="BierenViewModel"/>
+    </UserControl.Resources>
+    <StackPanel DataContext="{StaticResource BierenViewModel}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Column="0" Grid.Row="0" Text="{Binding HuidigBier.BierNr}"/>
+            <Button Grid.Column="1" Grid.Row="0" Content="Zoek" Command="{Binding ZoekCommand}"/>
+            <TextBox Grid.Column="0" Grid.Row="1"  Text="{Binding HuidigBier.Naam}"/>
+            <Button Grid.Column="1" Grid.Row="1" Content="Clear" Command="{Binding ClearCommand}"/>
+            <ComboBox Grid.Column="0" Grid.Row="2" ItemsSource="{Binding BrouwersCollectie}" DisplayMemberPath="BrNaam" SelectedItem="{Binding HuidigeBrouwer}"/>
+            <ComboBox Grid.Column="0" Grid.Row="3" ItemsSource="{Binding BierSoortenCollectie}" DisplayMemberPath="Soort" SelectedItem="{Binding HuidigeBierSoort}"/>
+        </Grid>
+
+            <DataGrid x:Name="dbBieren"  ItemsSource="{Binding BierenCollectie}" 
+                  SelectedItem="{Binding HuidigBier,Mode=TwoWay}"></DataGrid>
+
+    </StackPanel>
+</UserControl>

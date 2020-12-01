@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,15 +14,13 @@ using System.Windows.Shapes;
 namespace VoorbeeldOpdracht3UIWPF.Views
 {
     /// <summary>
-    /// Interaction logic for MijnUserControl.xaml
+    /// Interaction logic for BierenUserControl.xaml
     /// </summary>
-    public partial class MijnUserControl : UserControl
+    public partial class BierenUserControl : UserControl
     {
-        public MijnUserControl()
+        public BierenUserControl()
         {
             InitializeComponent();
-            
         }
-
     }
 }
