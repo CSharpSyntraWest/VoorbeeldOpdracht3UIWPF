@@ -15,9 +15,9 @@ namespace BierenWebAPI.Data
         {
         }
 
-        public virtual DbSet<Bieren> Bieren { get; set; }
-        public virtual DbSet<Brouwers> Brouwers { get; set; }
-        public virtual DbSet<Soorten> Soorten { get; set; }
+        public virtual DbSet<Bier> Bieren { get; set; }
+        public virtual DbSet<Brouwer> Brouwers { get; set; }
+        public virtual DbSet<Soort> Soorten { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -30,32 +30,34 @@ namespace BierenWebAPI.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Bieren>(entity =>
+            modelBuilder.Entity<Bier>(entity =>
             {
-                entity.HasKey(e => e.BierNr);
+                entity.ToTable("Bier");
+                entity.HasKey(e => e.Id);
 
-                entity.Property(e => e.BierNr).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Naam)
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.BrouwerNrNavigation)
+                entity.HasOne(d => d.Brouwers)
                     .WithMany(p => p.Bieren)
-                    .HasForeignKey(d => d.BrouwerNr)
+                    .HasForeignKey(d => d.BrouwerId)
                     .HasConstraintName("FK_Bieren_Brouwers");
 
-                entity.HasOne(d => d.SoortNrNavigation)
+                entity.HasOne(d => d.Soorten)
                     .WithMany(p => p.Bieren)
-                    .HasForeignKey(d => d.SoortNr)
+                    .HasForeignKey(d => d.SoortId)
                     .HasConstraintName("FK_Bieren_Soorten");
             });
 
-            modelBuilder.Entity<Brouwers>(entity =>
+            modelBuilder.Entity<Brouwer>(entity =>
             {
-                entity.HasKey(e => e.BrouwerNr);
+                entity.ToTable("Brouwer");
+                entity.HasKey(e => e.Id);
 
-                entity.Property(e => e.BrouwerNr).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Adres)
                     .HasMaxLength(50)
@@ -70,20 +72,18 @@ namespace BierenWebAPI.Data
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Soorten>(entity =>
+            modelBuilder.Entity<Soort>(entity =>
             {
-                entity.HasKey(e => e.SoortNr);
+                entity.ToTable("Soort");
+                entity.HasKey(e => e.Id);
 
-                entity.Property(e => e.SoortNr).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
-                entity.Property(e => e.Soort)
+                entity.Property(e => e.SoortNaam)
                     .HasMaxLength(50)
                     .IsUnicode(false);
             });
-
-         
-
-           
+   
             OnModelCreatingPartial(modelBuilder);
         }
 

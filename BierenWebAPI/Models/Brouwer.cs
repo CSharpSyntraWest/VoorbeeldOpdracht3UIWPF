@@ -3,20 +3,20 @@ using System.Collections.Generic;
 
 namespace BierenWebAPI.Data
 {
-    public partial class Brouwers
+    public partial class Brouwer
     {
-        public Brouwers()
+        public Brouwer()
         {
-            Bieren = new HashSet<Bieren>();
+            Bieren = new HashSet<Bier>();
         }
 
-        public int BrouwerNr { get; set; }
+        public int Id { get; set; }
         public string BrNaam { get; set; }
         public string Adres { get; set; }
         public short? PostCode { get; set; }
         public string Gemeente { get; set; }
         public int? Omzet { get; set; }
 
-        public virtual ICollection<Bieren> Bieren { get; set; }
+        public virtual ICollection<Bier> Bieren { get; set; }
     }
 }

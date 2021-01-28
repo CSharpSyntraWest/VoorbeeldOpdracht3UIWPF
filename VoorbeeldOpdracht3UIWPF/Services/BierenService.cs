@@ -16,7 +16,7 @@ namespace VoorbeeldOpdracht3UIWPF.Services
 
         public BierenService()
         {
-            _client.BaseAddress = new Uri("https://localhost:44373/");
+            _client.BaseAddress = new Uri("http://www.syntrawest.somee.com/");// "https://localhost:44373/"
 
             _client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));

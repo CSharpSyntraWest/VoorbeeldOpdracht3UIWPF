@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoorbeeldOpdracht3UIWPF", "VoorbeeldOpdracht3UIWPF\VoorbeeldOpdracht3UIWPF.csproj", "{5A8DC15A-8A74-44CD-851D-0FD223B7D215}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoorbeeldOpdracht3UIWPF", "VoorbeeldOpdracht3UIWPF\VoorbeeldOpdracht3UIWPF.csproj", "{5A8DC15A-8A74-44CD-851D-0FD223B7D215}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppBierenDbEFCore", "ConsoleAppBierenDbEFCore\ConsoleAppBierenDbEFCore.csproj", "{F71DA723-3AA0-49B6-86A4-CC290F3E494A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppBierenDbFirstEFCore", "ConsoleAppBierenDbEFCore\ConsoleAppBierenDbFirstEFCore.csproj", "{F71DA723-3AA0-49B6-86A4-CC290F3E494A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BierenWebAPI", "BierenWebAPI\BierenWebAPI.csproj", "{86CA073B-FF88-4EF9-B988-2A3F84297BF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BierenWebAPI", "BierenWebAPI\BierenWebAPI.csproj", "{86CA073B-FF88-4EF9-B988-2A3F84297BF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppCallWebAPI", "ConsoleAppCallWebAPI\ConsoleAppCallWebAPI.csproj", "{83A502C0-E248-4C8A-8690-C41F299F00EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{86CA073B-FF88-4EF9-B988-2A3F84297BF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86CA073B-FF88-4EF9-B988-2A3F84297BF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86CA073B-FF88-4EF9-B988-2A3F84297BF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83A502C0-E248-4C8A-8690-C41F299F00EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83A502C0-E248-4C8A-8690-C41F299F00EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83A502C0-E248-4C8A-8690-C41F299F00EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83A502C0-E248-4C8A-8690-C41F299F00EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

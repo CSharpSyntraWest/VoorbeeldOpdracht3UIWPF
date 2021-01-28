@@ -18,52 +18,52 @@ namespace BierenWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BierenController : ControllerBase
+    public class SoortenController : ControllerBase
     {
         private readonly ILogger<BierenController> _logger;
-        private readonly IBierenRepository _bierenRepository;
+        private readonly ISoortenRepository _soortenRepository;
 
-        public BierenController(ILogger<BierenController> logger, IBierenRepository bierenRepository)
+        public SoortenController(ILogger<BierenController> logger, ISoortenRepository soortenRepository)
         {
             _logger = logger;
-            _bierenRepository = bierenRepository;
+            _soortenRepository = soortenRepository;
         }
-        // GET api/Bieren/GetAll
+        // GET api/Soorten
         [HttpGet]
-        public async Task<IActionResult> GetBieren()
+        public async Task<IActionResult> GetSoorten()
         {
-            var bieren = _bierenRepository.GeefBieren();
-            return new OkObjectResult(bieren);
+            var soorten = _soortenRepository.GeefSoorten();
+            return new OkObjectResult(soorten);
         }
-        // GET api/Bieren/4
+        // GET api/Soorten/4
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetBier(int id)
+        public async Task<IActionResult> GetSoort(int id)
         {
-            var bier = _bierenRepository.GeefBierVoorID(id);
-            return Ok(bier);
+            var soort = _soortenRepository.GeefSoortVoorID(id);
+            return Ok(soort);
         }
 
-        // POST: api/Bieren
+        // POST: api/Soorten
         [HttpPost]
-        public IActionResult Post([FromBody] Bier bier)
+        public IActionResult Post([FromBody] Soort soort)
         {
             using (var scope = new TransactionScope())
             {
-                _bierenRepository.VoegBierToe(bier);
+                _soortenRepository.VoegSoortToe(soort);
                 scope.Complete();
-                return CreatedAtAction(nameof(GetBier), new { id = bier.Id }, bier);
+                return CreatedAtAction(nameof(GetSoort), new { id = soort.Id }, soort);
             }
         }
 
-        // PUT: api/Bieren/5
+        // PUT: api/Soorten/5
         [HttpPut]
-        public IActionResult Put([FromBody] Bier bier)
+        public IActionResult Put([FromBody] Soort soort)
         {
-            if (bier != null)
+            if (soort != null)
             {
                 using (var scope = new TransactionScope())
                 {
-                    _bierenRepository.WijzigBier(bier);
+                    _soortenRepository.WijzigSoort(soort);
                     scope.Complete();
                     return new OkResult();
                 }
@@ -71,11 +71,11 @@ namespace BierenWebAPI.Controllers
             return new NoContentResult();
         }
 
-        // DELETE: api/Bieren/5
+        // DELETE: api/Soorten/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _bierenRepository.VerwijderBier(id);
+            _soortenRepository.VerwijderSoort(id);
             return new OkResult();
         }
     }
